@@ -12,19 +12,23 @@ def background_reduction():
 	while True:
 		ret, frame = cap.read()
 		fgmask = fgbg.apply(frame)
-		#hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+		hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-		#lower_red = np.array([0, 0, 0])
-		#upper_red = np.array([150, 150, 150])
+		# hue, saturation, value
+		# hue: chooses color (red, green, orange, etc)
+		# saturation: tells how much quantity we want to have
+		# value: brightness of color
+		lower_red = np.array([0, 0, 0])
+		upper_red = np.array([30, 40, 130])
 
-		#mask = cv2.inRange(hsv, lower_red, upper_red)
-		#res = cv2.bitwise_and(frame, frame, mask = mask)
+		mask = cv2.inRange(hsv, lower_red, upper_red)
+		res = cv2.bitwise_and(frame, frame, mask = mask)
 
 		cv2.imshow('original', frame)
 		#cv2.imshow('frame', frame)
-		#cv2.imshow('mask', mask)
-		#cv2.imshow('res', res)
-		cv2.imshow('fg', fgmask)
+		cv2.imshow('mask', mask)
+		cv2.imshow('res', res)
+		#cv2.imshow('fg', fgmask)
 
 		k = cv2.waitKey(5) & 0xFF
 		if k == 27:
