@@ -1,6 +1,6 @@
-# MOG_Background_Reduction
+# MOG Background Reduction
 Creating background reduction for webcam image processing.
-This lets us get the idea for preparing images for Machine Learning tasks.
+Using this we can preprocess objects that we want to feed into Machine Learning tasks. For example, we want to create classifier for gestures, thus reducing extra background noise would let us focus only on hands and hopefully serve as a great training set for our models.
 
 <img src="img_samples/blue.PNG"/>
 <img src="img_samples/hands.PNG"/>
