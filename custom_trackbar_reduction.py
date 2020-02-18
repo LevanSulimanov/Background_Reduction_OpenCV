@@ -1,5 +1,10 @@
 import cv2
-import numpy as np 
+import numpy as np
+
+# This file has implementation for Background Reduction procedure,
+# that leave only specific range of colors present in the scene
+
+# Modify pop-up trackbars, in order to set different color ranges
 
 # set to 0, if you use webcam
 # otherwise, needs to be replaced with video, update is in development
@@ -81,7 +86,7 @@ while True:
 	# Min (H:0, S:0, V:0)
 	# Max (H:30, S:137, V:255)
 
-	# !!!BEST!!!:
+	# BEST:
 	# And:
 	# Min (H:0, S:0, V:70)
 	# Max (H:37, S:128, V:255)
@@ -115,7 +120,7 @@ while True:
 
 	# clean, final version of filtering
 	#cv2.imshow("res", res)
-	cv2.imshow("v_gray_res", v_gray_res)
+	#cv2.imshow("v_gray_res", v_gray_res)
 	# not sure if edges is a good choice
 	#cv2.imshow("edges", edges_from_res)
 
